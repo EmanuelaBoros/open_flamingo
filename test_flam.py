@@ -46,6 +46,7 @@ query_image = Image.open(
 )
 
 query_image = Image.open('lla1-1.jpg')
+query_image = Image.open('HIPE-2022-v2.1-hipe2020-dev-en_iiif_7067.jpg')
 
 """
 Step 2: Preprocessing images
