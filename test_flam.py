@@ -45,7 +45,7 @@ query_image = Image.open(
     ).raw
 )
 
-query_image = Image.open('lla1-1.jpg').raw
+query_image = Image.open('lla1-1.jpg')
 
 """
 Step 2: Preprocessing images
