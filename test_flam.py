@@ -72,7 +72,7 @@ tokenizer.padding_side = "left" # For generation padding tokens should be on the
 # )
 
 lang_x = tokenizer(
-    ["<image>An image of"],
+    ["<image>In this image, it is written"],
     return_tensors="pt",
 )
 """
