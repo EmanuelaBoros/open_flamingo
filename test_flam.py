@@ -53,7 +53,8 @@ Details: For OpenFlamingo, we expect the image to be a torch tensor of shape
  In this case batch_size = 1, num_media = 3, num_frames = 1,
  channels = 3, height = 224, width = 224.
 """
-vision_x = [image_processor(demo_image_one).unsqueeze(0), image_processor(demo_image_two).unsqueeze(0), image_processor(query_image).unsqueeze(0)]
+# vision_x = [image_processor(demo_image_one).unsqueeze(0), image_processor(demo_image_two).unsqueeze(0), image_processor(query_image).unsqueeze(0)]
+vision_x = [image_processor(query_image).unsqueeze(0)]
 vision_x = torch.cat(vision_x, dim=0)
 vision_x = vision_x.unsqueeze(1).unsqueeze(0)
 
@@ -64,12 +65,15 @@ Details: In the text we expect an <image> special token to indicate where an ima
  portion associated with an image.
 """
 tokenizer.padding_side = "left" # For generation padding tokens should be on the left
+# lang_x = tokenizer(
+#     ["<image>An image of two cats.<|endofchunk|><image>An image of a bathroom sink.<|endofchunk|><image>An image of"],
+#     return_tensors="pt",
+# )
+
 lang_x = tokenizer(
-    ["<image>An image of two cats.<|endofchunk|><image>An image of a bathroom sink.<|endofchunk|><image>An image of"],
+    ["<image>An image of"],
     return_tensors="pt",
 )
-
-
 """
 Step 4: Generate text
 """
