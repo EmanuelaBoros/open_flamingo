@@ -77,7 +77,8 @@ def main():
     parser.add_argument(
         "--resume_from_checkpoint",
         type=str,
-        help="path to checkpoint to resume from, this should contain model, optimizer, and lr_scheduler states. if there exists a checkpoint in the dir named run_name, we will resume from that checkpoint by default",
+        help="path to checkpoint to resume from, this should contain model, optimizer, and lr_scheduler states. if "
+             "there exists a checkpoint in the dir named run_name, we will resume from that checkpoint by default",
         default=None,
     )
     parser.add_argument(

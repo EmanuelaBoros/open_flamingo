@@ -471,6 +471,9 @@ def get_laion_dataset(args, image_processor, tokenizer, epoch=0, floor=False):
     return DataInfo(dataloader=dataloader, shared_epoch=shared_epoch)
 
 
+def get_archive_dataset(args, image_processor, tokenizer, epoch=0, floor=False):
+    return None
+
 def get_dataset_fn(dataset_type):
     """
     Helper function to get the dataset function based on the dataset type

@@ -264,16 +264,7 @@ class GatedCrossAttentionBlock(nn.Module):
         media_locations=None,
         use_cached_media=False,
     ):
-        x = (
-            self.attn(
-                x,
-                media,
-                media_locations=media_locations,
-                use_cached_media=use_cached_media,
-            )
-            * self.attn_gate.tanh()
-            + x
-        )
+        x = (self.attn(x, media, media_locations=media_locations, use_cached_media=use_cached_media,) * self.attn_gate.tanh()+ x)
         x = self.ff(x) * self.ff_gate.tanh() + x
 
         return x
